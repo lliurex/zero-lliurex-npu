@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: M.Angel Juan <m.angel.juan@gmail.com>
 Rules-Requires-Root: no
 Build-Depends:
- debhelper-compat (= 13),
+ debhelper-compat (= 13), llxsrchelper, zero-dev, inkscape
 Standards-Version: 4.6.2
 Homepage: https://github.com/lliurex
 
