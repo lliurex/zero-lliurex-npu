@@ -1,0 +1,18 @@
+Source: zero-lliurex-npu
+Section: utils
+Priority: optional
+Maintainer: M.Angel Juan <m.angel.juan@gmail.com>
+Rules-Requires-Root: no
+Build-Depends:
+ debhelper-compat (= 13),
+Standards-Version: 4.6.2
+Homepage: https://github.com/lliurex
+
+Package: zero-lliurex-npu
+Architecture: any
+Multi-Arch: foreign
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+Description: Installer for Intel drivers for GPU & NPU accel
+ Installer for Intel drivers for GPU & NPU accel
