@@ -1,0 +1,33 @@
+#!/bin/bash
+
+PACK23=(intel-driver-compiler-npu intel-fw-npu intel-igc-core intel-igc-opencl intel-level-zero-gpu intel-level-zero-gpu-legacy1 intel-level-zero-npu intel-opencl-icd intel-opencl-icd-legacy1 level-zero level-zero-devel libigdgmm12)
+PACK25=(intel-driver-compiler-npu intel-fw-npu intel-igc-core-2 intel-igc-opencl-2 intel-level-zero-npu intel-ocloc intel-opencl-icd level-zero level-zero-devel libigdgmm12 libze-intel-gpu1)
+
+ACTION="$1"
+
+case $ACTION in
+
+    preInstall)
+    ;;
+
+    postInstall)
+	echo "Detecting system..."
+	D=$(lsb_release -cs)
+	echo "Installing..."
+	if [[ "$D" == "noble" ]]; then
+	    apt-get -y install "${PACK25[@]}"
+	else
+	    apt-get -y install "${PACK23[@]}"
+	fi
+    ;;
+    remove)
+	echo "Detecting system..."
+	D=$(lsb_release -cs)
+	echo "Installing..."
+	if [[ "$D" == "noble" ]]; then
+	    apt-get remove "${PACK25[@]}"
+	else
+	    apt-get remove "${PACK23[@]}"
+	fi
+    ;;	
+esac

@@ -1,0 +1,6 @@
+{
+    "type":"apt",
+    "pkg_list": [{"name":"level-zero","key_store":"zero-lliurex-npu","custom_name":"Intel GPU/NPU Drivers"}], 
+    "script": {"name":"/usr/share/zero-lliurex-npu/npu_script", "remove":true},
+    "zomando":"zero-lliurex-npu"
+}
